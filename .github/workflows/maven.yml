@@ -40,12 +40,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Start PostgreSQL service
-      run: docker start postgres
-        
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-      
-    - name: Stop PostgreSQL service
-      run: docker stop postgres
       
